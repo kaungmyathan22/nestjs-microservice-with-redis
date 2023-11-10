@@ -11,10 +11,7 @@ export class AppService {
 
   constructor() {
     this.client = ClientProxyFactory.create({
-      transport: Transport.TCP,
-      options: {
-        port: 4000,
-      },
+      transport: Transport.REDIS,
     });
   }
 

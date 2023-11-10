@@ -7,9 +7,9 @@ const logger = new Logger('Blog');
 
 async function bootstrap() {
   const app = await NestFactory.createMicroservice(BlogModule, {
-    transport: Transport.TCP,
+    transport: Transport.REDIS,
     options: {
-      port: 4000,
+      url: 'redis://localhost:6379',
     },
   });
   await app.listen().then(() => logger.log('Microservice is listening'));
